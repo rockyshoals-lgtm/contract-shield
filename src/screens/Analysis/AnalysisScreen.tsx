@@ -220,6 +220,14 @@ export default function AnalysisScreen({ navigation, route }: Props) {
           </>
         )}
 
+        {/* Legal Disclaimer */}
+        <View style={styles.disclaimerBox}>
+          <Text style={styles.disclaimerEmoji}>⚖️</Text>
+          <Text style={styles.disclaimerText}>
+            This analysis is for informational and educational purposes only and does not constitute legal advice. ContractShield is not a law firm and does not provide legal services. Always consult a qualified attorney before signing any contract.
+          </Text>
+        </View>
+
         <View style={{ height: SPACING.xxxl }} />
       </ScrollView>
     </SafeAreaView>
@@ -395,4 +403,13 @@ const styles = StyleSheet.create({
   emptyTab: { alignItems: 'center', paddingVertical: SPACING.xxxl },
   emptyEmoji: { fontSize: 48 },
   emptyText: { fontSize: 16, color: COLORS.textSecondary, marginTop: SPACING.md, textAlign: 'center' },
+
+  // Disclaimer
+  disclaimerBox: {
+    flexDirection: 'row', alignItems: 'flex-start', backgroundColor: COLORS.surfaceAlt,
+    borderRadius: RADIUS.md, padding: SPACING.lg, marginTop: SPACING.lg,
+    borderWidth: 1, borderColor: COLORS.border,
+  },
+  disclaimerEmoji: { fontSize: 18, marginRight: SPACING.md, marginTop: 2 },
+  disclaimerText: { flex: 1, fontSize: 12, color: COLORS.textSecondary, lineHeight: 18 },
 });

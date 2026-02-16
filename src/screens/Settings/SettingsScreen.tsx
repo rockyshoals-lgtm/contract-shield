@@ -195,6 +195,27 @@ export default function SettingsScreen({ navigation }: Props) {
           </View>
         </View>
 
+        {/* Legal */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>⚖️ Legal</Text>
+          <TouchableOpacity
+            style={styles.legalLink}
+            onPress={() => navigation.navigate('Legal', { section: 'tos' })}
+            activeOpacity={0.7}
+          >
+            <Text style={styles.legalLinkText}>Terms of Service</Text>
+            <Text style={styles.legalArrow}>→</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.legalLink}
+            onPress={() => navigation.navigate('Legal', { section: 'privacy' })}
+            activeOpacity={0.7}
+          >
+            <Text style={styles.legalLinkText}>Privacy Policy</Text>
+            <Text style={styles.legalArrow}>→</Text>
+          </TouchableOpacity>
+        </View>
+
         <View style={{ height: SPACING.xxxl * 2 }} />
       </ScrollView>
     </SafeAreaView>
@@ -273,4 +294,13 @@ const styles = StyleSheet.create({
   aboutVersion: { fontSize: 13, color: COLORS.textTertiary, marginTop: SPACING.xs },
   aboutText: { fontSize: 14, color: COLORS.textSecondary, textAlign: 'center', marginTop: SPACING.md, lineHeight: 20 },
   aboutJoined: { fontSize: 12, color: COLORS.textTertiary, marginTop: SPACING.md },
+
+  // Legal
+  legalLink: {
+    flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',
+    backgroundColor: COLORS.surface, borderRadius: RADIUS.md, padding: SPACING.lg,
+    marginBottom: SPACING.sm, ...SHADOWS.sm,
+  },
+  legalLinkText: { fontSize: 15, ...FONTS.medium, color: COLORS.textPrimary },
+  legalArrow: { fontSize: 16, color: COLORS.textTertiary },
 });

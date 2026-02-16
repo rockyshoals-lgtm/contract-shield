@@ -179,6 +179,13 @@ export default function HomeScreen({ navigation }: Props) {
           </View>
         </View>
 
+        {/* Legal Disclaimer */}
+        <View style={styles.disclaimerBox}>
+          <Text style={styles.disclaimerText}>
+            ⚖️ ContractShield provides informational analysis only — not legal advice. Always consult a qualified attorney before signing contracts.
+          </Text>
+        </View>
+
         <View style={{ height: SPACING.xxxl }} />
       </ScrollView>
     </SafeAreaView>
@@ -264,4 +271,10 @@ const styles = StyleSheet.create({
   stepEmoji: { fontSize: 28 },
   stepTitle: { fontSize: 13, ...FONTS.bold, color: COLORS.textPrimary, marginTop: SPACING.sm },
   stepDesc: { fontSize: 11, color: COLORS.textSecondary, textAlign: 'center', marginTop: 2 },
+
+  disclaimerBox: {
+    backgroundColor: COLORS.surfaceAlt, borderRadius: RADIUS.md, padding: SPACING.lg,
+    borderWidth: 1, borderColor: COLORS.border,
+  },
+  disclaimerText: { fontSize: 12, color: COLORS.textTertiary, lineHeight: 18, textAlign: 'center' },
 });
